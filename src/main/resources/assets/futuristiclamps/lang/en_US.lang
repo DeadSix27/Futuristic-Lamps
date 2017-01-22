@@ -1,0 +1,5 @@
+# Blocks 
+tile.blocks.block_flat_lamp.name=Flat Lamp (White)
+tile.blocks.block_flat_lamp.red.name=Flat Lamp (Red)
+tile.blocks.block_flat_lamp_transparent.name=Flat Lamp (Transparent)
+tile.blocks.block_flat_lamp_black.name=Flat Lamp (Black)

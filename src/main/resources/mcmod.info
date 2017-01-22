@@ -1,0 +1,16 @@
+[
+{
+  "modid": "futuristiclamps",
+  "name": "Futuristic Lamps",
+  "description": "Futuristic Lamps",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "https://github.com/DeadSix27/Futuristic-Lamps/",
+  "updateUrl": "https://github.com/DeadSix27/Futuristic-Lamps",
+  "authorList": [ "DeadSix27" ],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]

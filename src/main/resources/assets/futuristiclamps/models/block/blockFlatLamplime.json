@@ -1,0 +1,38 @@
+{
+	"textures": {
+		"particle": "futuristiclamps:blocks/blockFlatLamplime",
+		"0": "futuristiclamps:blocks/blockFlatLamplime"
+	},
+	"elements": [{
+		"name": "Element",
+		"from": [1.0, 0.0, 1.0],
+		"to": [15.0, 1.0, 15.0],
+		"faces": {
+			"north": {
+				"texture": "#0",
+				"uv": [0.0, 0.0, 14.0, 1.0]
+			},
+			"east": {
+				"texture": "#0",
+				"uv": [0.0, 0.0, 14.0, 1.0]
+			},
+			"south": {
+				"texture": "#0",
+				"uv": [0.0, 0.0, 14.0, 1.0]
+			},
+			"west": {
+				"texture": "#0",
+				"uv": [0.0, 0.0, 14.0, 1.0]
+			},
+			"up": {
+				"texture": "#0",
+				"uv": [0.0, 0.0, 14.0, 14.0]
+			},
+			"down": {
+				"texture": "#0",
+				"uv": [0.0, 0.0, 14.0, 14.0],
+				"cullface": "down"
+			}
+		}
+	}]
+}
