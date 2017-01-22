@@ -185,10 +185,10 @@ public class BlockFlatLampVariants extends Block
     @Override
     public IBlockState getStateFromMeta(int meta)
     {
-        EnumFacing facing = EnumFacing.getHorizontal(meta);
+        EnumFacing facing = EnumFacing.getFront(meta & 0x7);
         int colourbits = (meta & 0x0c) >> 2;
         EnumColour colour = EnumColour.byMetadata(colourbits);
-        return this.getDefaultState().withProperty(PROPERTYCOLOUR, colour).withProperty(PROPERTYFACING, facing);
+        return getDefaultState().withProperty(PROPERTYCOLOUR, colour).withProperty(PROPERTYFACING, facing);
     }
     @Override
     public int getMetaFromState(IBlockState state)
@@ -196,13 +196,14 @@ public class BlockFlatLampVariants extends Block
         EnumFacing facing = (EnumFacing)state.getValue(PROPERTYFACING);
         EnumColour colour = (EnumColour)state.getValue(PROPERTYCOLOUR);
 
-        int facingbits = facing.getHorizontalIndex();
+        int facingbits = facing.getIndex();
         int colourbits = colour.getMetadata() << 2;
         return facingbits | colourbits;
     }
     /*@Override
     public IBlockState getStateFromMeta(int meta)
     {
+
         int colourbits = (meta & 0x0c) >> 2;
         EnumColour colour = EnumColour.byMetadata(colourbits);
         return getDefaultState().withProperty(FACING, EnumFacing.getFront(meta & 0x7)).withProperty(PROPERTYCOLOUR, colour);
