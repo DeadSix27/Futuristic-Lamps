@@ -185,18 +185,19 @@ public class BlockFlatLampVariants extends Block
     @Override
     public IBlockState getStateFromMeta(int meta)
     {
-        EnumFacing facing = EnumFacing.getFront(meta & 0x7);
-        int colourbits = (meta & 0x0c) >> 2;
+        EnumFacing facing = EnumFacing.getHorizontal(meta);
+        int colourbits = (meta & 0x0c) >> 2; // 0x0c is hexadecimal, in binary 1100 - the upper two bits, corresponding to the colour
         EnumColour colour = EnumColour.byMetadata(colourbits);
-        return getDefaultState().withProperty(PROPERTYCOLOUR, colour).withProperty(PROPERTYFACING, facing);
+        return this.getDefaultState().withProperty(PROPERTYCOLOUR, colour).withProperty(PROPERTYFACING, facing);
     }
+
     @Override
     public int getMetaFromState(IBlockState state)
     {
         EnumFacing facing = (EnumFacing)state.getValue(PROPERTYFACING);
         EnumColour colour = (EnumColour)state.getValue(PROPERTYCOLOUR);
 
-        int facingbits = facing.getIndex();
+        int facingbits = facing.getHorizontalIndex();
         int colourbits = colour.getMetadata() << 2;
         return facingbits | colourbits;
     }
@@ -237,6 +238,7 @@ public class BlockFlatLampVariants extends Block
     @Override
     public IBlockState getStateForPlacement(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer)
     {
+
         EnumColour colour = EnumColour.byMetadata(meta);
         // find the quadrant the player is facing
         EnumFacing enumfacing = (placer == null) ? EnumFacing.NORTH : EnumFacing.fromAngle(placer.rotationYaw);
